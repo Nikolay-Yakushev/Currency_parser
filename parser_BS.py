@@ -95,8 +95,8 @@ def create_tables(con, data):
         # Prevent program from creating tables twicely
         try:
             cur.execute(query, {'table': AsIs(key)})
-        except Exception as e:
             con.commit()
+        except Exception as e:
             print("Exception: ", e)
         cur.close()
 
